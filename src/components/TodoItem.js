@@ -1,7 +1,7 @@
-import React from "react";
-import { Col, Row } from "react-bootstrap";
+import React from 'react';
+import { Col, Row } from 'react-bootstrap';
 
-const TodoItem = ({ item }) => {
+const TodoItem = ({ item, updateComplete, deleteTask }) => {
   return (
     <Row>
       <Col xs={12}>
@@ -9,8 +9,20 @@ const TodoItem = ({ item }) => {
           <div className="todo-content">{item.task}</div>
 
           <div>
-            <button className="button-delete">삭제</button>
-            <button className="button-delete">끝남</button>
+            <button
+              onClick={() => deleteTask(item._id)}
+              className="button-delete"
+            >
+              삭제
+            </button>
+            <button
+              onClick={() => updateComplete(item._id)}
+              className={`${
+                item.isComplete ? 'item-complete' : 'button-delete'
+              }`}
+            >
+              {item.isComplete ? `안끝남` : `끝남`}
+            </button>
           </div>
         </div>
       </Col>
