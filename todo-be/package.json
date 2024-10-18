@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "dev": "nodemon ./app.js"
+  },
+  "name": "todo-be",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.7.1",
+    "nodemon": "^3.1.7"
+  }
+}
