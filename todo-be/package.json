@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "nodemon ./app.js"
+    "start": "node app.js"
   },
   "name": "todo-be",
   "version": "1.0.0",
