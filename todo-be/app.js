@@ -9,16 +9,15 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/api", indexRouter);
-
-const MONGODB_URI = process.env.MONGODB_URI;
-console.log("몽고 연결 확인 한번 더 ");
-
+const mongoURI = process.env.MONGODB_URI;
 mongoose
-  .connect(MONGODB_URI, { useNewUrlParser: true })
+  .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
-    console.log("몽고db연결");
+    console.log("MongoDB connected!");
   })
-  .catch((err) => console.log("몽고디비 연결에러", err));
+  .catch((err) => {
+    console.error("MongoDB connection error:", err);
+  });
 
 app.listen(8000, () => {
   console.log("8000 연결됨");
