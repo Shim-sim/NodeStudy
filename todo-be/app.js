@@ -9,7 +9,10 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use("/api", indexRouter);
+
 const mongoURI = process.env.MONGODB_URI;
+console.log("MongoDB URI:", mongoURI);
+
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
