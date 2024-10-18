@@ -56,7 +56,7 @@ function App() {
     try {
       const findTask = todoList.find((item) => item._id === id);
       const res = await api.delete(`/tasks/${id}`);
-
+      console.log(123);
       if (res.status === 200) {
         getTasks();
       }
