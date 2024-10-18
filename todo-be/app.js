@@ -11,14 +11,14 @@ app.use(cors());
 app.use("/api", indexRouter);
 
 const MONGODB_URI = process.env.MONGODB_URI;
-console.log(MONGODB_URI);
+console.log("몽고 연결 확인 한번 더 ");
 
 mongoose
   .connect(MONGODB_URI, { useNewUrlParser: true })
   .then(() => {
     console.log("몽고db연결");
   })
-  .catch((err) => console.log("몽고디비 연결에러"));
+  .catch((err) => console.log("몽고디비 연결에러", err));
 
 app.listen(8000, () => {
   console.log("8000 연결됨");
