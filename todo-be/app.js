@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/api", indexRouter);
 
-const mongoURI = process.env.MONGODB_URI;
+const mongoURI = `mongodb+srv://shimdb96:4412979s@cluster0.izqj2.mongodb.net`;
 console.log("MongoDB URI:", mongoURI);
 
 mongoose
